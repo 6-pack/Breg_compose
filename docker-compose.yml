@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  reservation:
+    build: Breg_AirBnB_Service/
+    depends_on:
+      - 'reservation_db'
+    ports:
+      - '3002:3002'
+
+  reservation_db:
+    build: Breg_db/
+    ports:
+      - '5432:5432'
